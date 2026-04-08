@@ -1,8 +1,17 @@
+from dataclasses import field
 from pathlib import Path
 import json
 
 
 def read_data(file_name, field):
+    with open (file_name, "r") as file_obj:
+        data = json.load(file_obj)
+
+    if field in data:
+        return data[field]
+    else:
+        return None
+
     """
     Reads a JSON file and returns data for a given field.
 
@@ -24,7 +33,9 @@ def read_data(file_name, field):
 
 
 def main():
-    pass
+    sequential_data = read_data("sequential.json", "unordered_numbers")
+    print(sequential_data)
+
 
 
 if __name__ == "__main__":
