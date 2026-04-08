@@ -63,7 +63,6 @@ def binary_search(sekvence, number):
 
 
 def pattern_search(sekvence, vzor):
-    pozice_v_sekvenci = set()
     delka_vzoru = len(vzor)
 
 
