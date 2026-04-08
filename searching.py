@@ -32,9 +32,26 @@ def read_data(file_name, field):
     file_path = cwd_path / file_name
 
 
+def linear_search(sekvence, number):
+    result = {}
+    pozice = []
+
+    for i, hodnota in enumerate(sekvence):
+        if hodnota == number:
+            pozice.append(i)
+
+    result["positions"] = pozice
+    result["count"] = sekvence.count(number)
+    print(result)
+
+
+
 def main():
     sequential_data = read_data("sequential.json", "unordered_numbers")
     print(sequential_data)
+
+    linear_search(sequential_data, 0)
+
 
 
 
