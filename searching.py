@@ -51,7 +51,7 @@ def binary_search(sekvence, number):
     left = 0
     right = delka_sekvence - 1
     while left <= right:
-        middle = delka_sekvence // 2
+        middle = (left + right) // 2
         if sekvence[middle] == number:
             return middle
         elif number > sekvence[middle]:
@@ -69,7 +69,7 @@ def main():
     linear_search(sequential_data, 0)
 
     sekvence = read_data("sequential.json", "ordered_numbers")
-    vysledek = binary_search(sekvence, 72)
+    vysledek = binary_search(sekvence, 70)
     print(vysledek)
 
 
