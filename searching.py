@@ -1,7 +1,8 @@
 from dataclasses import field
 from pathlib import Path
 import json
-
+from generators import unordered_sequence
+import time
 
 def read_data(file_name, field):
     with open (file_name, "r") as file_obj:
@@ -66,10 +67,19 @@ def main():
     sequential_data = read_data("sequential.json", "unordered_numbers")
     print(sequential_data)
 
+    start = time.perf_counter()
     linear_search(sequential_data, 0)
+    end = time.perf_counter()
+    duration = end - start
+    print(duration)
+
 
     sekvence = read_data("sequential.json", "ordered_numbers")
+    start = time.perf_counter()
     vysledek = binary_search(sekvence, 70)
+    end = time.perf_counter()
+    duration = end - start
+    print(duration)
     print(vysledek)
 
 
