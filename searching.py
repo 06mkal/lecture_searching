@@ -62,6 +62,12 @@ def binary_search(sekvence, number):
     return None
 
 
+def pattern_search(sekvence, vzor):
+    pozice_v_sekvenci = set()
+    delka_vzoru = len(vzor)
+
+
+
 
 def main():
     sequential_data = read_data("sequential.json", "unordered_numbers")
